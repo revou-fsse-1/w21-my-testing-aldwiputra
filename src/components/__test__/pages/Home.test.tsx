@@ -1,4 +1,4 @@
-import { fireEvent, getByLabelText, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { describe, expect, test, vi } from 'vitest';
 import { SessionProvider } from 'next-auth/react';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
@@ -29,6 +29,10 @@ describe('Homepage', () => {
 
   test('correctly render according to the defined data', () => {
     expect(getByText('Aldi Putra')).toBeDefined();
+  });
+
+  test('render with data length > 0', () => {
+    expect(getByText('Create new contact')).toBeDefined();
   });
 
   test('search form', () => {
