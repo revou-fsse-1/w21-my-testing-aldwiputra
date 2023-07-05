@@ -1,13 +1,14 @@
-import { fireEvent, render } from '@testing-library/react';
-import { expect, test, vi } from 'vitest';
+import { fireEvent, getByLabelText, render } from '@testing-library/react';
+import { describe, expect, test, vi } from 'vitest';
 import { SessionProvider } from 'next-auth/react';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 import { createMockRouter } from '@/testHelpers/createMockRouter';
 import Home from '@/pages';
 
-test('correctly render according to the defined data', () => {
-  const { getByText, getByLabelText } = render(
-    <RouterContext.Provider value={createMockRouter({})}>
+describe('Homepage', () => {
+  const router = createMockRouter({});
+  const { getByText, getByTestId, getByLabelText } = render(
+    <RouterContext.Provider value={router}>
       <SessionProvider session={null}>
         <Home
           data={[
@@ -25,5 +26,19 @@ test('correctly render according to the defined data', () => {
       </SessionProvider>
     </RouterContext.Provider>
   );
-  expect(getByText('Aldi Putra')).toBeDefined();
+
+  test('correctly render according to the defined data', () => {
+    expect(getByText('Aldi Putra')).toBeDefined();
+  });
+
+  test('search form', () => {
+    fireEvent.change(getByLabelText('Search'), {
+      target: {
+        value: 'aldi',
+      },
+    });
+    fireEvent.submit(getByTestId('search-form'));
+
+    expect(router.push).toBeCalledWith('/?search=aldi');
+  });
 });
