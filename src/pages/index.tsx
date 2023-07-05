@@ -1,5 +1,4 @@
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
-import { useSession } from 'next-auth/react';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
