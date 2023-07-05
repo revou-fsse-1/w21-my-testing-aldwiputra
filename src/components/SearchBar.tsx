@@ -12,7 +12,11 @@ function SearchBar() {
   };
 
   return (
-    <form onSubmit={submitHandler} autoComplete='off' className='hidden sm:block'>
+    <form
+      data-testid='search-form'
+      onSubmit={submitHandler}
+      autoComplete='off'
+      className='hidden sm:block'>
       <label htmlFor='default-search' className='mb-2 text-sm font-medium sr-only text-white'>
         Search
       </label>
