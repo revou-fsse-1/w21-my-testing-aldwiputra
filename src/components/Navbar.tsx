@@ -5,14 +5,14 @@ import AuthButton from './AuthButton';
 import SearchBar from './SearchBar';
 import { useRouter } from 'next/router';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 function Navbar() {
   const session = useSession();
   const router = useRouter();
 
   return (
-    <nav className={`${inter.className} border-gray-200 bg-gray-950 border-b border-b-gray-800/75`}>
+    <nav className={` border-gray-200 bg-gray-950 border-b border-b-gray-800/75`}>
       <div className='relative max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-8 py-6 '>
         <div className='flex items-center gap-4'>
           <Link href='/' className='flex items-stretch'>

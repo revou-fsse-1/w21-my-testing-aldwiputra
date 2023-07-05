@@ -2,7 +2,7 @@ import { fireEvent, render } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import ContactCard from '../ContactCard';
 
-test('auth button status', () => {
+test('render correctly', () => {
   const { getByText } = render(
     <ContactCard
       data={{
