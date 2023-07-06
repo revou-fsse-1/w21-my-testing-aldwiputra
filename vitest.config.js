@@ -9,7 +9,7 @@ export default defineConfig({
     coverage: {
       all: true,
       include: ['src/**/*.ts', 'src/**/*.tsx'],
-      exclude: ['src/main.tsx'],
+      exclude: ['src/main.tsx', 'prisma/**/*'],
     },
     environment: 'jsdom',
   },

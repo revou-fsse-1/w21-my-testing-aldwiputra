@@ -3,7 +3,7 @@ function TwitterHandle({ twitter, middle }: { twitter: string; middle: boolean }
     <div className={` flex items-stretch w-fit ${middle && 'mx-auto'}`}>
       <div className='text-whitefocus:ring-4 focus:outline-none font-medium rounded-l-md text-sm p-2 text-center inline-flex items-center bg-blue-600 focus:ring-blue-800'>
         <svg
-          className='w-4 h-4 text-gray-800 dark:text-white'
+          className='w-4 h-4 text-white'
           aria-hidden='true'
           xmlns='http://www.w3.org/2000/svg'
           fill='currentColor'

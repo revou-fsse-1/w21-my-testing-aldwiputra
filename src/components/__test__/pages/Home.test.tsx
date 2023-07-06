@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { ByRoleOptions, fireEvent, render } from '@testing-library/react';
 import { describe, expect, test, vi } from 'vitest';
 import { SessionProvider } from 'next-auth/react';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
