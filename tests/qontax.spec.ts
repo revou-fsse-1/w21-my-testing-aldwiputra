@@ -28,15 +28,3 @@ test('create contact with a better locators', async ({ page }) => {
 
   expect(page).not.toHaveURL('new');
 });
-
-test.skip('edit contact with codegen', async ({ page }) => {
-  await page
-    .getByRole('link', {
-      name: 'Photo of Zain Zain Fathoni Senior Software Engineer zainfathoni',
-    })
-    .click();
-  await page.locator('section').getByRole('link').click();
-  await page.getByPlaceholder('John', { exact: true }).click();
-  await page.getByPlaceholder('John', { exact: true }).fill('Zainal');
-  await page.getByRole('button', { name: 'Save' }).click();
-});
