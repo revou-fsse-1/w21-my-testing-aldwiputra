@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+export const initialState = {
   firstName: '',
   lastName: '',
   occupation: '',
@@ -11,25 +11,33 @@ const initialState = {
 
 const formSlice = createSlice({
   name: 'form',
-  initialState: { form: initialState },
+  initialState,
   reducers: {
     changeFirstname: (state, action) => {
-      state.form.firstName = action.payload;
+      state.firstName = action.payload;
     },
     changeLastname: (state, action) => {
-      state.form.lastName = action.payload;
+      state.lastName = action.payload;
     },
     changeOccupation: (state, action) => {
-      state.form.occupation = action.payload;
+      state.occupation = action.payload;
     },
     changeTwitter: (state, action) => {
-      state.form.twitter = action.payload;
+      state.twitter = action.payload;
     },
     changeBio: (state, action) => {
-      state.form.bio = action.payload;
+      state.bio = action.payload;
     },
     changeImgUrl: (state, action) => {
-      state.form.imgUrl = action.payload;
+      state.imgUrl = action.payload;
+    },
+    resetForm: (state) => {
+      state.firstName = '';
+      state.lastName = '';
+      state.occupation = '';
+      state.twitter = '';
+      state.imgUrl = '';
+      state.bio = '';
     },
   },
 });
@@ -41,6 +49,7 @@ export const {
   changeTwitter,
   changeBio,
   changeImgUrl,
+  resetForm,
 } = formSlice.actions;
 
 export default formSlice.reducer;
